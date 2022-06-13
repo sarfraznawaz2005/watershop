@@ -1,10 +1,3 @@
-<div class="clearfix">&nbsp;</div>
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">&copy; {{date('Y')}} <a href="/">{{appName()}}</a> - All rights reserved.</p>
-    </div>
-</footer>
-
 {{-- IE es6 pollyfill --}}
 @if(isBadBrowser())
     <script src="/modules/core/js/pollyfills.js"></script>

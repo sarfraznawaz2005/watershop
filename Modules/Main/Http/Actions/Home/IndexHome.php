@@ -8,7 +8,7 @@ class IndexHome extends Action
 {
     public function __invoke()
     {
-        title('Welcome');
+        title('Dashboard');
 
         return view('main::pages.home.index');
     }

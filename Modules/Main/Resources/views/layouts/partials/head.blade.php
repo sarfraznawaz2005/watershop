@@ -9,21 +9,13 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
     @endif
 
-    <title>{{Meta::get('title') . ' :: ' . appName()}}</title>
-
-    {!! Meta::tag('robots') !!}
-
-    {!! Meta::tag('title') !!}
-
-    {!! Meta::tag('description') !!}
-    {!! Meta::tag('site_name') !!}
-    {!! Meta::tag('url') !!}
-    {!! Meta::tag('locale') !!}
-
     <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>{{Meta::get('title') . ' :: ' . appName()}}</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+    <link rel="stylesheet" href="/modules/main/css/main.css">
     <link rel="stylesheet" href="/modules/main/css/custom.css">
 
     @stack('styles')

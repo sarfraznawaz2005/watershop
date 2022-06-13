@@ -1,8 +1,5 @@
 {
     "Core": true,
-    "Crud": true,
-    "Admin": true,
     "Main": true,
-    "Task": true,
     "User": true
 }

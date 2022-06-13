@@ -10,7 +10,7 @@ return [
 
     'datatable' => [
         # rows per page
-        'pageLength' => 20,
+        'pageLength' => 100,
         # enable or disable table ordering
         'ordering' => true,
         # auto width for columns

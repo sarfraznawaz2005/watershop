@@ -55,11 +55,13 @@
                             </a>
                         </div>
                     @endif
-                    <div class="pull-right">
-                        <a href="{{ route('register') }}" class="text-blue">
-                            Create Account
-                        </a>
-                    </div>
+                    @if(config('user.allow_user_registration', true))
+                        <div class="pull-right">
+                            <a href="{{ route('register') }}" class="text-blue">
+                                Create Account
+                            </a>
+                        </div>
+                    @endif
                     <div class="clearfix"></div>
                 @endslot
                 @endcard
