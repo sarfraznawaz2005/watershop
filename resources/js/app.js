@@ -12,7 +12,7 @@ import buttondisabler from 'buttondisabler';
 
 // disable submit button after clicked once to avoid duplicatation
 new buttondisabler({
-    timeout: 5000,
+    timeout: 3000,
     text: 'Wait...'
 });
 

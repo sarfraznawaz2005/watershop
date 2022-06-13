@@ -11,14 +11,14 @@
             </li>
 
             <li>
-                <a class="app-menu__item {{active_link('admin.users.index')}}" href="#">
+                <a class="app-menu__item {{active_link('entries.*')}}" href="{{route('entries.index')}}">
                     <i class="app-menu__icon fa fa-book"></i>
                     <span class="app-menu__label">Entries</span>
                 </a>
             </li>
 
             <li>
-                <a class="app-menu__item {{active_link('areas.index')}}" href="{{route('areas.index')}}">
+                <a class="app-menu__item {{active_link('areas.*')}}" href="{{route('areas.index')}}">
                     <i class="app-menu__icon fa fa-building"></i>
                     <span class="app-menu__label">Areas</span>
                 </a>

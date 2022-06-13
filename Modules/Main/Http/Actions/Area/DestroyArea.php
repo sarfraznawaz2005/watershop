@@ -8,7 +8,7 @@ use Sarfraznawaz2005\Actions\Action;
 
 class DestroyArea extends Action
 {
-    public function __invoke(Area $area): ?bool
+    public function __invoke(Area $area)
     {
         if ($area->entries()->count()) {
             return flashBackErrors('Cannot delete this area as it has entries!');

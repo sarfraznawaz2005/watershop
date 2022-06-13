@@ -20,6 +20,9 @@ class AreaDataTable extends DataTable
     {
         return datatables()
             ->of($query)
+            ->editColumn('created_at', function ($object) {
+                return date('d M Y', strtotime($object->created_at));
+            })
             ->editColumn('action', function ($object) {
 
                 $actions = listingEditButton(route('areas.edit', [$object]));
@@ -62,7 +65,14 @@ class AreaDataTable extends DataTable
     {
         return [
             'name',
-            'created_at' => ['width' => '180px'],
+            [
+                'data' => 'created_at',
+                'name' => 'created_at',
+                'title' => 'Date',
+                'searchable' => true,
+                'orderable' => true,
+                'width' => '180px'
+            ],
         ];
     }
 

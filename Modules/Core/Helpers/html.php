@@ -6,6 +6,8 @@
  * Time: 3:35 PM
  */
 
+use Illuminate\Support\Str;
+
 /**
  * make listing edit button
  *
@@ -17,7 +19,7 @@ function listingEditButton($link, $title = 'Edit')
 {
     $html = <<< HTML
     <a data-placement="top" data-tooltip data-original-title="$title" style="text-decoration: none;" href="$link">
-        <b class="btn btn-primary fa fa-pencil"></b>
+        <b class="btn btn-success btn-sm fa fa-pencil"></b>
     </a>
 HTML;
 
@@ -39,7 +41,7 @@ function listingDeleteButton($link, $title = 'this', $showTip = true, $icon = tr
     $tooltipClass = $showTip ? 'data-tooltip' : '';
     $csrf_field = csrf_field();
     $method_field = method_field('DELETE');
-    $text = $icon ? '<b class="btn btn-danger fa fa-trash"></b>' : 'Delete';
+    $text = $icon ? '<b class="btn btn-danger btn-sm fa fa-trash"></b>' : 'Delete';
 
     $html = <<< HTML
     <form action="$link" method="POST" style="display: inline;">
@@ -216,47 +218,38 @@ function popoverTip($text, $title = 'Info')
     return '<span data-placement="top" data-tooltip data-toggle="tooltip" title="' . $text . '"><b style="margin-top:2px;" class="fa fa-question-circle"></b></span>';
 }
 
-function tdModal($text, $title = 'Details')
+function tdModal($id, $text, $align = 'left', $title = 'Details')
 {
     if (!$text) {
         return '';
     }
 
-    $id = str_random() . time() . uniqid() . substr(str_slug($text), 0, 10);
     $text = trim($text);
 
-    $html = <<< HTML
-<div id="mod_dtls_$id" class="modal fade move_modal" tabindex="-1" role="dialog" style="z-index: 9999999999;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header modal-header-success">
+    return <<< HTML
+        <div class="modal fade" id="modal_$id" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">$title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">&times;</span>
                 </button>
-
-                <h4 class="modal-title">
-                    $title
-                </h4>
-            </div>
-
-            <div class="modal-body" style="width:100%; white-space: normal;">
+              </div>
+              <div class="modal-body text-$align">
                 $text
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
             </div>
-
-            <div class="modal-footer" style="padding: 7px 10px 5px 10px;">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+          </div>
         </div>
-    </div>
-</div>
 
-<a data-toggle="modal" data-target="#mod_dtls_$id" href="javascript:void(0);" style="text-decoration: none;">
-    <b class="btn btn-primary fa fa-info-circle"></b>
-</a>
-
+        <a data-toggle="modal" data-target="#modal_$id" href="javascript:void(0);" style="text-decoration: none;">
+            <b class="btn btn-primary btn-sm fa fa-info-circle"></b>
+        </a>
 HTML;
-
-    return $html;
 }
 
 /**

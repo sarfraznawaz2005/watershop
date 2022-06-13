@@ -21,6 +21,7 @@ class Entry extends CoreModel
         'rider_name',
         'notes',
         'is_monthly',
+        'created_at',
     ];
 
     public function area(): BelongsTo
