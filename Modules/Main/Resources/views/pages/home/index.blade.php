@@ -2,124 +2,266 @@
 
 @section('content')
 
-    <span class="badge badge-warning" style="font-size: 16px;">Today</span>
-    <hr style="margin-top: 5px;">
+    @card(['type' => 'white', 'header_type' => 'light', 'classes' => 'mb3'])
+    @slot('header')
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#others">Others</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#monthly">Monthly</a>
+            </li>
+        </ul>
+    @endslot
 
-    <div class="row">
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Amount Due</h4>
-                        <h3>{{number_format($amountDueToday)}}</h3>
-                    </div>
+    <div class="tab-content">
+        <div class="tab-pane active" id="others">
+
+            <span class="badge badge-warning" style="font-size: 16px;">Today</span>
+            <hr style="margin-top: 5px;">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueToday)}}</h3>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueToday}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotal)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <span class="badge badge-warning" style="font-size: 16px;">Month</span>
+            <hr style="margin-top: 5px;">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueMonth)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueMonth}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotalMonth)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <span class="badge badge-warning" style="font-size: 16px;">Overall</span>
+            <hr style="margin-top: 5px;">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueOverall)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueOverall}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotalOverall)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
-                    <div class="info">
-                        <h4>Bottles Due</h4>
-                        <h3>{{$bottlesDueToday}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
+        <div class="tab-pane" id="monthly">
+            <span class="badge badge-warning" style="font-size: 16px;">Today</span>
+            <hr style="margin-top: 5px;">
 
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{number_format($amountDueTotal)}}</h3>
-                    </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueTodayMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueTodayMM}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotalMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <span class="badge badge-warning" style="font-size: 16px;">Month</span>
+            <hr style="margin-top: 5px;">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueMonthMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueMonthMM}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotalMonthMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <span class="badge badge-warning" style="font-size: 16px;">Overall</span>
+            <hr style="margin-top: 5px;">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Amount Due</h4>
+                                <h3>{{number_format($amountDueOverallMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
+                            <div class="info">
+                                <h4>Bottles Due</h4>
+                                <h3>{{$bottlesDueOverallMM}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="widget-link">
+                        <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
+                            <div class="info">
+                                <h4>Total Amount (Paid/Unpaid)</h4>
+                                <h3>{{number_format($amountDueTotalOverallMM)}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
         </div>
 
     </div>
 
-    <span class="badge badge-warning" style="font-size: 16px;">This Month</span>
-    <hr style="margin-top: 5px;">
-
-    <div class="row">
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Amount Due</h4>
-                        <h3>{{number_format($amountDueMonth)}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
-                    <div class="info">
-                        <h4>Bottles Due</h4>
-                        <h3>{{$bottlesDueMonth}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{number_format($amountDueTotalMonth)}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </div>
-
-    <span class="badge badge-warning" style="font-size: 16px;">Overall</span>
-    <hr style="margin-top: 5px;">
-
-    <div class="row">
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Amount Due</h4>
-                        <h3>{{number_format($amountDueOverall)}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
-                    <div class="info">
-                        <h4>Bottles Due</h4>
-                        <h3>{{$bottlesDueOverall}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <a href="#" class="widget-link">
-                <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
-                    <div class="info">
-                        <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{number_format($amountDueTotalOverall)}}</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </div>
+    @endcard
 
 @stop
 

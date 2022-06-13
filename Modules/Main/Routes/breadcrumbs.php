@@ -2,7 +2,7 @@
 
 // Home
 Breadcrumbs::for('home', static function ($trail) {
-    $trail->push('Dashboard', route('home', [' ']));
+    $trail->push('Home', route('home', [' ']));
 });
 
 Breadcrumbs::for('login', function ($trail) {
