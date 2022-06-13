@@ -60,13 +60,13 @@ class EntryDataTable extends DataTable
                 return tdCenter($actions);
             })
             ->rawColumns(['action', 'area_id', 'bottles_sent', 'bottles_received', 'amount', 'paid', 'is_monthly', 'notes'])
-            ->blacklist(['action', 'notes']);
+            ->blacklist(['action']);
     }
 
     public function query()
     {
         // ->get() has impact on search/filters
-        $query = Entry::latest();
+        $query = Entry::all();
 
         return $this->applyScopes($query);
     }
@@ -135,7 +135,7 @@ class EntryDataTable extends DataTable
                 'data' => 'notes',
                 'name' => 'notes',
                 'title' => 'Notes',
-                'searchable' => false,
+                'searchable' => true,
                 'orderable' => false,
                 'exportable' => false,
             ],
