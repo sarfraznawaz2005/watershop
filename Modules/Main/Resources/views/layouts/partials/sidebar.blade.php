@@ -4,7 +4,7 @@
     @auth
         <ul class="app-menu">
             <li>
-                <a class="app-menu__item {{active_link('home')}}" href="{{active_link('home')}}">
+                <a class="app-menu__item {{active_link('home')}}" href="{{url('/')}}">
                     <i class="app-menu__icon fa fa-dashboard"></i>
                     <span class="app-menu__label">Dashboard</span>
                 </a>
@@ -18,7 +18,7 @@
             </li>
 
             <li>
-                <a class="app-menu__item {{active_link('admin.users.index')}}" href="#">
+                <a class="app-menu__item {{active_link('areas.index')}}" href="{{route('areas.index')}}">
                     <i class="app-menu__icon fa fa-building"></i>
                     <span class="app-menu__label">Areas</span>
                 </a>
