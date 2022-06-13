@@ -11,7 +11,7 @@
                 <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Amount Due</h4>
-                        <h3>{{$amountDueToday}}</h3>
+                        <h3>{{number_format($amountDueToday)}}</h3>
                     </div>
                 </div>
             </a>
@@ -33,7 +33,7 @@
                 <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{$amountDueTotal}}</h3>
+                        <h3>{{number_format($amountDueTotal)}}</h3>
                     </div>
                 </div>
             </a>
@@ -51,7 +51,7 @@
                 <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Amount Due</h4>
-                        <h3>{{$amountDueMonth}}</h3>
+                        <h3>{{number_format($amountDueMonth)}}</h3>
                     </div>
                 </div>
             </a>
@@ -73,7 +73,7 @@
                 <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{$amountDueTotalMonth}}</h3>
+                        <h3>{{number_format($amountDueTotalMonth)}}</h3>
                     </div>
                 </div>
             </a>
@@ -91,7 +91,7 @@
                 <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Amount Due</h4>
-                        <h3>{{$amountDueOverall}}</h3>
+                        <h3>{{number_format($amountDueOverall)}}</h3>
                     </div>
                 </div>
             </a>
@@ -113,7 +113,7 @@
                 <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                     <div class="info">
                         <h4>Total Amount (Paid/Unpaid)</h4>
-                        <h3>{{$amountDueTotalOverall}}</h3>
+                        <h3>{{number_format($amountDueTotalOverall)}}</h3>
                     </div>
                 </div>
             </a>

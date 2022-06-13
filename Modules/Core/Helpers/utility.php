@@ -422,7 +422,7 @@ if (!function_exists('money_format')) {
 function moneyFormat($number)
 {
     if (!$number) {
-        return '$0.00';
+        return '0.00';
     }
 
     setlocale(LC_MONETARY, 'en_US.UTF-8');
