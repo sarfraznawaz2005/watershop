@@ -22,7 +22,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueToday'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueToday'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueToday'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
@@ -62,7 +62,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueMonth'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueMonth'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueMonth'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
@@ -102,7 +102,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueOverall'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueOverall'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueOverall'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
@@ -144,7 +144,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueTodayMonthly'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueTodayMonthly'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueTodayMonthly'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
@@ -184,7 +184,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueMonthMonthly'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -195,7 +195,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueMonthMonthly'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -206,7 +206,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueMonthMonthly'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
@@ -224,7 +224,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'amountDueOverallMonthly'])}}" class="widget-link">
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
@@ -235,7 +235,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'bottlesDueOverallMonthly'])}}" class="widget-link">
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
@@ -246,7 +246,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="#" class="widget-link">
+                    <a href="{{route('entries.index', ['query' => 'totalAmountDueOverallMonthly'])}}" class="widget-link">
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>

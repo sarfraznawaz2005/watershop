@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth', 'verified']], static function () {
     });
 
     Route::group(['namespace' => '\\'], static function () {
-        Route::get('entries', IndexEntry::class)->name('entries.index');
+        Route::get('entries/{query?}', IndexEntry::class)->name('entries.index');
         Route::post('entries', StoreEntry::class)->name('entries.store');
         Route::get('entries/{entry}/edit', EditEntry::class)->name('entries.edit');
         Route::put('entries/{entry}', UpdateEntry::class)->name('entries.update');

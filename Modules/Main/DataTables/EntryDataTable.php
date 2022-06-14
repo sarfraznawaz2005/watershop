@@ -65,8 +65,12 @@ class EntryDataTable extends DataTable
 
     public function query()
     {
-        // ->get() has impact on search/filters
-        $query = Entry::all();
+        if (isset($this->request()->segments()[1])) {
+            $function = $this->request()->segments()[1];
+            $query = (new Entry())->$function();
+        } else {
+            $query = Entry::all();
+        }
 
         return $this->applyScopes($query);
     }
