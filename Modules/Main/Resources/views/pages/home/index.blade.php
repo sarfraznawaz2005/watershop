@@ -26,7 +26,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueToday)}}</h3>
+                                <h3>{{number_format($entry->amountDueToday()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -37,7 +37,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueToday}}</h3>
+                                <h3>{{$entry->bottlesDueToday()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -48,7 +48,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotal)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueToday()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -66,7 +66,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueMonth)}}</h3>
+                                <h3>{{number_format($entry->amountDueMonth()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -77,7 +77,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueMonth}}</h3>
+                                <h3>{{$entry->bottlesDueMonth()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -88,7 +88,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotalMonth)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueMonth()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -106,7 +106,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueOverall)}}</h3>
+                                <h3>{{number_format($entry->amountDueOverall()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -117,7 +117,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueOverall}}</h3>
+                                <h3>{{$entry->bottlesDueOverall()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -128,7 +128,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotalOverall)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueOverall()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -148,7 +148,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueTodayMM)}}</h3>
+                                <h3>{{number_format($entry->amountDueTodayMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -159,7 +159,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueTodayMM}}</h3>
+                                <h3>{{$entry->bottlesDueTodayMonthly()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -170,7 +170,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotalMM)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueTodayMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -188,7 +188,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueMonthMM)}}</h3>
+                                <h3>{{number_format($entry->amountDueMonthMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -199,7 +199,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueMonthMM}}</h3>
+                                <h3>{{$entry->bottlesDueMonthMonthly()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -210,7 +210,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotalMonthMM)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueMonthMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -228,7 +228,7 @@
                         <div class="widget-small primary"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Amount Due</h4>
-                                <h3>{{number_format($amountDueOverallMM)}}</h3>
+                                <h3>{{number_format($entry->amountDueOverallMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
@@ -239,7 +239,7 @@
                         <div class="widget-small danger"><i class="icon fa fa-flask fa-3x"></i>
                             <div class="info">
                                 <h4>Bottles Due</h4>
-                                <h3>{{$bottlesDueOverallMM}}</h3>
+                                <h3>{{$entry->bottlesDueOverallMonthly()->get()->sum('cnt')}}</h3>
                             </div>
                         </div>
                     </a>
@@ -250,7 +250,7 @@
                         <div class="widget-small success"><i class="icon fa fa-money fa-3x"></i>
                             <div class="info">
                                 <h4>Total Amount (Paid/Unpaid)</h4>
-                                <h3>{{number_format($amountDueTotalOverallMM)}}</h3>
+                                <h3>{{number_format($entry->totalAmountDueOverallMonthly()->get()->sum('amount'))}}</h3>
                             </div>
                         </div>
                     </a>
