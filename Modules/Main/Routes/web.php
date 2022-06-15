@@ -6,6 +6,8 @@ use Modules\Main\Http\Actions\Area\EditArea;
 use Modules\Main\Http\Actions\Area\IndexArea;
 use Modules\Main\Http\Actions\Area\StoreArea;
 use Modules\Main\Http\Actions\Area\UpdateArea;
+use Modules\Main\Http\Actions\Backup\IndexBackup;
+use Modules\Main\Http\Actions\Backup\StoreBackup;
 use Modules\Main\Http\Actions\Entry\DestroyEntry;
 use Modules\Main\Http\Actions\Entry\DuplicateEntry;
 use Modules\Main\Http\Actions\Entry\EditEntry;
@@ -32,6 +34,11 @@ Route::group(['middleware' => ['auth', 'verified']], static function () {
         Route::put('entries/{entry}', UpdateEntry::class)->name('entries.update');
         Route::delete('entries/{entry}', DestroyEntry::class)->name('entries.destroy');
         Route::get('entries/{entry}/duplicate', DuplicateEntry::class)->name('entries.duplicate');
+    });
+
+    Route::group(['namespace' => '\\'], static function () {
+        Route::get('backup', IndexBackup::class)->name('backup.index');
+        Route::post('backup', StoreBackup::class)->name('backup.store');
     });
 });
 

@@ -23,6 +23,14 @@
                     <span class="app-menu__label">Areas</span>
                 </a>
             </li>
+
+            <li>
+                <a class="app-menu__item {{active_link('backup.*')}}" href="{{route('backup.index')}}">
+                    <i class="app-menu__icon fa fa-database"></i>
+                    <span class="app-menu__label">Backup</span>
+                </a>
+            </li>
+
         </ul>
     @endauth
 </aside>
